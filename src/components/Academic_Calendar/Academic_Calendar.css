@@ -1,0 +1,45 @@
+/* src/components/Academic_Calendar/Academic_Calendar.css */
+
+.calendar-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.calendar-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2e3d49;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.calendar-section {
+  margin-bottom: 30px;
+}
+
+.program-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.calendar-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.calendar-list li {
+  margin-bottom: 8px;
+}
+
+.calendar-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.calendar-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}

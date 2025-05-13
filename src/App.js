@@ -40,6 +40,16 @@ import DepartmentPage from './components/Faculty_Details/DepartmentPage';
 import FacultyPortfolio from './components/Faculty_Details/FacultyPortfolio';
 import FacultyPortal from './components/LoginSystem/FacultyPortal';
 
+import AcademicCalendar from './components/Academic_Calendar/Academic_Calendar';
+
+import Timetable from './components/Timetables/Timetable';
+
+import Payment from './components/Payment/Payment';
+
+import HostelOverview from './components/Hostel/HostelOverview';
+import HostelDetailsForm from './components/Hostel/HostelDetailsForm';
+import WardenTable from './components/Hostel/WardenTable';
+
 
 import './App.css';
 
@@ -87,9 +97,18 @@ function App() {
               <Route path="/faculty" element={<FacultyPage />} />
               <Route path="/department/:dept" element={<DepartmentPage />} />
               <Route path="/portfolio/:id" element={<FacultyPortfolio />} />
+
+              <Route path="/academic-calendar" element={<AcademicCalendar />} />
+
+              <Route path="/exams" element={<Timetable />} />
+
+              <Route path="/fees" element={<Payment />} /> 
+
+              <Route path="/hostel" element={<HostelOverview />} />
+              <Route path="/hostel/:hostelId" element={<HostelDetailsForm />} />
+              <Route path="/warden/:hostelId" element={<WardenTable />} />
+
               
-
-
               <Route path="*" element={<h2 style={{ padding: '2rem' }}>Page Not Found</h2>} />
             </Routes>
           </main>
