@@ -1,0 +1,42 @@
+{
+    "cse": [
+      {
+        "id" : "kumar",
+        "name": "Dr. A. Kumar",
+      "designation": "Professor",
+      "qualification": "Ph.D in Computer Science",
+      "research": "Artificial Intelligence, Machine Learning",
+      "email": "akumar@gvpce.ac.in",
+      "link": "/portfolio/prof1",
+      "image": "https://gvpce.ac.in/CSE/FacPhotos/Dr.%20CV%20Guru%20Rao.jpg"
+      },
+      {
+        "id" : "kumar",
+        "name": "Dr. A. Kumar",
+      "designation": "Professor",
+      "qualification": "Ph.D in Computer Science",
+      "research": "Artificial Intelligence, Machine Learning",
+      "email": "akumar@gvpce.ac.in",
+      "link": "/portfolio/prof1",
+      "image": "https://gvpce.ac.in/CSE/FacPhotos/Dr.%20CV%20Guru%20Rao.jpg"
+      }
+    ],
+    "ece": [
+      {
+        "name": "Mr. Arjun",
+        "designation": "Associate Professor",
+        "link": "https://example.com/arjun"
+      },
+      {
+        "name": "Ms. Radha",
+        "designation": "Lecturer",
+        "link": "https://example.com/radha"
+      }
+    ],
+    "it": [],
+    "eee": [],
+    "mechanical": [],
+    "civil": [],
+    "chemical": []
+  }
+  

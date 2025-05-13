@@ -1,0 +1,21 @@
+.department-main-container {
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .department-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .department-list li {
+    margin: 8px 0;
+  }
+  
+  .department-list a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: 500;
+  }
+  

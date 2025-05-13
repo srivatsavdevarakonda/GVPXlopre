@@ -1,0 +1,419 @@
+/* FacultyPortal.css */
+:root {
+    --primary-color: #1e40af;
+    --primary-light: #3b82f6;
+    --success-color: #16a34a;
+    --warning-color: #eab308;
+    --purple-color: #7e22ce;
+    --orange-color: #ea580c;
+    --text-dark: #1f2937;
+    --text-medium: #4b5563;
+    --text-light: #9ca3af;
+    --bg-light: #f9fafb;
+    --border-color: #e5e7eb;
+  }
+  
+  .faculty-portal {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-right: 1rem;
+  }
+  
+  .navbar-brand {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .navbar-brand span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.4;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navbar-link, .logout-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .navbar-link {
+    background-color: transparent;
+    color: var(--text-medium);
+  }
+  
+  .navbar-link:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+  }
+  
+  .logout-button {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  .logout-button:hover {
+    background-color: #fecaca;
+  }
+  
+  /* Profile Header */
+  .portal-header {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .profile-image-container {
+    position: relative;
+  }
+  
+  .profile-image-bg {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background-color: #dbeafe;
+    border-radius: 50%;
+    top: -5px;
+    left: 10px;
+  }
+  
+  .profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .profile-details {
+    flex-grow: 1;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .faculty-name {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-right: 1rem;
+  }
+  
+  .status-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background-color: #dcfce7;
+    color: #166534;
+  }
+  
+  .faculty-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .faculty-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .info-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--primary-color);
+  }
+  
+  .id-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .info-label {
+    font-weight: 500;
+    color: var(--text-medium);
+    white-space: nowrap;
+  }
+  
+  .info-value {
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .stat-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid var(--accent-color, var(--primary-light));
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-medium);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color, var(--primary-light));
+  }
+  
+  /* Section Title */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .section-title h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+  }
+  
+  /* Subject Grid */
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
+    gap: 1.5rem;
+    padding: 0 2rem 2rem;
+  }
+  
+  .subject-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fade-in 0.5s ease-out;
+    animation-fill-mode: both;
+    animation-delay: calc(var(--index) * 0.1s);
+  }
+  
+  .subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subject-header {
+    padding: 1.25rem;
+    color: black;
+  }
+  
+  .subject-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .subject-header .section {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+  
+  .subject-body {
+    padding: 1.25rem;
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background-color: #f3f4f6;
+    color: var(--text-medium);
+  }
+  
+  .tag.semester {
+    background-color: #e0f2fe;
+    color: #0369a1;
+  }
+  
+  .tag.students {
+    background-color: #f3e8ff;
+    color: #7e22ce;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .action-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #f3f4f6;
+    color: var(--text-medium);
+  }
+  
+  .action-link:hover {
+    background-color: #e5e7eb;
+    color: var(--text-dark);
+  }
+  
+  .action-link.manage {
+    background-color: #dbeafe;
+    color: var(--primary-color);
+  }
+  
+  .action-link.manage:hover {
+    background-color: #bfdbfe;
+  }
+  
+  /* Decorative Elements */
+  .decorative-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 70%);
+    z-index: 0;
+  }
+  
+  .top-right {
+    top: -100px;
+    right: -100px;
+  }
+  
+  .bottom-left {
+    bottom: -100px;
+    left: -100px;
+  }
+  
+  /* Animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .profile-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .profile-header {
+      justify-content: center;
+    }
+  
+    .faculty-info-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .faculty-info-item {
+      justify-content: center;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .navbar-brand {
+      margin: 1rem 0;
+    }
+  
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .subjects-grid {
+      grid-template-columns: 1fr;
+    }
+  }

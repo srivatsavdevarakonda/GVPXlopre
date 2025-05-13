@@ -1,0 +1,277 @@
+/* Global Styles and Variables */
+:root {
+  --primary-color: #19b159;
+  --secondary-color: #033b1e;
+  --accent-color: #f0ff4c;
+  --text-color: #ffffff;
+  --hover-brightness: 1.2;
+  --transition-speed: 0.3s;
+  --glow-strength: rgba(240, 255, 76, 0.6);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Main Content Container - Centering with Enhanced Background */
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), #026d39);
+  background-size: 200% 200%;
+  color: var(--text-color);
+  animation: gradientShift 15s ease infinite, fadeIn 2s ease-in-out;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Adding smooth fade-in effect */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Floating particles background effect */
+.main-content-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.4;
+  z-index: 0;
+  animation: floatingParticles 120s linear infinite;
+}
+
+@keyframes floatingParticles {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* Content Section Styling with Glass Morphism */
+.content-section {
+  width: 80%;
+  max-width: 800px;
+  padding: 30px;
+  margin-bottom: 50px;
+  border-radius: 16px;
+  background-color: rgba(12, 43, 27, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(240, 255, 76, 0.3);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(240, 255, 76, 0.2) inset;
+  transition: transform var(--transition-speed) ease, 
+              box-shadow var(--transition-speed) ease,
+              background-color var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.content-section:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 2px 10px var(--glow-strength),
+    0 2px 4px rgba(255, 255, 255, 0.2) inset;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Section Title Styling with Light Effect */
+.section-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(240, 255, 76, 0.8);
+  animation: titlePulse 3s infinite alternate;
+}
+
+/* Subtle pulsing glow for titles */
+@keyframes titlePulse {
+  0% { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(240, 255, 76, 0.4); }
+  100% { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(240, 255, 76, 0.9); }
+}
+
+/* Animating Section Title */
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.1); }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 12px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--glow-strength);
+  animation: expandLine 1.5s ease-out forwards;
+  transform-origin: center;
+}
+
+@keyframes expandLine {
+  0% { width: 0; }
+  100% { width: 60px; }
+}
+
+/* Section Description with Improved Readability */
+.section-description {
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  animation: fadeInText 2s ease-in-out;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade-in text effect */
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Events List Styling with Staggered Animation */
+.events-list {
+  list-style: none;
+  padding-left: 0;
+  perspective: 1000px;
+}
+
+.event-item {
+  font-size: 18px;
+  margin: 18px 0;
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease;
+  transform-origin: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: slideInFromLeft 0.5s ease-out both;
+  animation-delay: calc(var(--item-index, 0) * 0.1s);
+}
+
+@keyframes slideInFromLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.event-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    0 0 10px var(--glow-strength);
+}
+
+/* Interactive element styles */
+button, .interactive-element {
+  background-color: rgba(240, 255, 76, 0.25);
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  outline: none;
+}
+
+button:hover, .interactive-element:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(240, 255, 76, 0.5);
+}
+
+button:active, .interactive-element:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-section {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 26px;
+  }
+  
+  .section-description {
+    font-size: 16px;
+  }
+  
+  .event-item {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+}
+
+/* Scroll effect for large content */
+@media (min-height: 800px) {
+  .main-content-container {
+    overflow-y: auto;
+    padding-bottom: 80px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 204, 0, 0.3);
+  border-radius: 10px;
+  transition: background var(--transition-speed) ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 204, 0, 0.5);
+}

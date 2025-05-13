@@ -1,0 +1,109 @@
+:root {
+    --primary: #003366;
+    --secondary: #ffffff;
+    --accent: #0073e6;
+    --bg-light: #f0f4f8;
+    --hover-row: #e6f2ff;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .admin-wrapper {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--bg-light);
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .admin-heading {
+    font-size: 2.8rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: slideDown 0.8s ease;
+  }
+  
+  .section-title {
+    color: var(--accent);
+    font-size: 2rem;
+    margin: 50px 0 20px;
+    text-align: center;
+    position: relative;
+    font-weight: 600;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+  
+  .admin-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 40px;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--secondary);
+    box-shadow: 0 4px 12px var(--shadow);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-table:hover {
+    transform: scale(1.01);
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin-table th {
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .admin-table td {
+    font-size: 0.95rem;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-table tbody tr:hover {
+    background-color: var(--hover-row);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

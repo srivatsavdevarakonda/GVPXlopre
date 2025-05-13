@@ -1,0 +1,55 @@
+/* General container styling */
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full height of viewport */
+    background-color: #f4f4f4; /* subtle background color */
+  }
+  
+  /* Content styling */
+  .welcome-content {
+    background-color: #fff; /* white background for content */
+    padding: 30px;
+    border-radius: 10px; /* rounded corners for a neat look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+    text-align: center; /* center-align text */
+    width: 60%; /* adjust width as needed */
+    max-width: 600px; /* max width to keep it neat */
+    box-sizing: border-box;
+  }
+  
+  .welcome-title {
+    font-size: 2.5rem; /* large title */
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2c3e50; /* dark text for contrast */
+  }
+  
+  .welcome-description {
+    font-size: 1.2rem; /* slightly larger text for readability */
+    color: #7f8c8d; /* softer text color */
+    margin-bottom: 30px;
+  }
+  
+  .link-container {
+    margin-top: 20px;
+  }
+  
+  .link-text {
+    font-size: 1.1rem;
+    color: #34495e; /* complementary text color */
+    margin-bottom: 10px;
+  }
+  
+  .website-link {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #2980b9; /* blue link color */
+    text-decoration: none;
+  }
+  
+  .website-link:hover {
+    text-decoration: underline; /* underline on hover for interactivity */
+  }
+  

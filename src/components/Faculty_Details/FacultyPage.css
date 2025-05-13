@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary: #004d99;
+  --accent: #3399ff;
+  --text: #222;
+  --bg: #f4f6fa;
+  --white: #fff;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Base */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+.faculty-page-bg {
+  background: var(--bg);
+  background-size: cover ; /* Ensures the background covers the entire element */
+  background-position: center; /* Centers the background */
+  width: 100%; /* Ensures full width */
+  height: 300px;
+  object-fit: fill; /* Makes it take up the full viewport height */
+}
+/* Banner */
+.banner-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 30px;
+}
+
+.banner-image {
+  width: 100%;
+  height: 250px;
+  object-fit: fill;
+
+  display: block;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  animation: zoomBanner 1s ease-out forwards;}
+
+.banner-image:hover {
+  filter: brightness(1);
+}
+
+/* College Info */
+.college-info-container {
+  text-align: center;
+  margin-top: -40px;
+  padding: 0 15px;
+  color: #0d0101e7;
+}
+
+.college-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.college-tagline {
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+/* Faculty Container */
+.faculty-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.faculty-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #555;
+}
+
+/* Department Cards */
+.department-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.department-card {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.department-card:hover {
+  transform: translateY(-5px);
+}
+
+.department-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+.department-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.department-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.department-fullname {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/* Footer */
+.faculty-footer {
+  background: var(--primary);
+  color: #eee;
+  text-align: center;
+  padding: 30px 15px 20px;
+  margin-top: 50px;
+  border-radius: 20px 20px 0 0;
+}
+
+.footer-info h4,
+.footer-links h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.footer-info p,
+.footer-links ul li a {
+  font-size: 0.95rem;
+  color: #ccc;
+  text-decoration: none;
+  margin: 4px 0;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a:hover {
+  color: var(--accent);
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-container {
+    height: 160px;
+  }
+
+  .college-title {
+    font-size: 1.6rem;
+  }
+
+  .faculty-heading {
+    font-size: 1.6rem;
+  }
+
+  .department-name {
+    font-size: 1.2rem;
+  }
+}

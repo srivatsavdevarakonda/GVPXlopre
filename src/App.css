@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.main-content-area {
+  flex: 1;
+  padding: 20px;
+  margin-right: 75px;
+  background-color: white;
+}
+
+.main-content-area {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  min-height: 80vh;
+}
