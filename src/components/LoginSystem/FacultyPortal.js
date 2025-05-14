@@ -1,15 +1,11 @@
-// FacultyPortal.js
+// src/pages/FacultyPortal.js
 import React from "react";
-import "./FacultyPortal.css";
 import { Calendar, Briefcase, Award, LogOut, User, Book } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import "./FacultyPortal.css";
 
 function FacultyPortal() {
   const navigate = useNavigate();
-
-  // Commented: Auth logic for future use
-  // const [isAuthenticated, setIsAuthenticated] = useState(true);
-  // if (!isAuthenticated) return <Navigate to="/login" />;
 
   const faculty = {
     name: "Dr. D. Uma Devi",
@@ -21,107 +17,81 @@ function FacultyPortal() {
   };
 
   const subjects = [
-    { name: "Artificial Intelligence", semester: 6, students: 42, section:'CSE-3', color: "#7e22ce" },
-    { name: "Machine Learning", semester: 5, students: 38, section:'CSM', color: "#1e40af" },
-    { name: "Data Structures", semester: 3, students: 45, section:'CSD', color: "#16a34a" },
-    { name: "Web Development", semester: 4, students: 40, section:'CSE-1', color: "#ea580c"},
+    { name: "Artificial Intelligence", semester: 6, students: 42, section: "CSE-3", color: "#7e22ce" },
+    { name: "Machine Learning", semester: 5, students: 38, section: "CSM", color: "#1e40af" },
+    { name: "Data Structures", semester: 3, students: 45, section: "CSD", color: "#16a34a" },
+    { name: "Web Development", semester: 4, students: 40, section: "CSE-1", color: "#ea580c" }
   ];
+
+  const handleViewDetails = (subjectName) => {
+    const formattedName = subjectName.toLowerCase().replace(/ /g, "-");
+    navigate(`/faculty-portal/${formattedName}`);
+  };
 
   return (
     <div className="faculty-portal">
-      {/* Top Navigation Bar */}
+      {/* Navbar */}
       <nav className="navbar">
         <img
-          src="https://th.bing.com/th?q=GVP+Logo+for+Google+Forms&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
-          className="logo" alt=""
+          src="https://th.bing.com/th?q=GVP+Logo+for+Google+Forms&w=120&h=120"
+          className="logo"
+          alt="GVP Logo"
         />
-
         <div className="navbar-brand">
-          <span>
-            <center>
-              GAYATRI VIDYA PARISHAD COLLEGE OF ENGINEERING <br />
-              Faculty Portal
-            </center>
-          </span>
+          <center>
+            GAYATRI VIDYA PARISHAD COLLEGE OF ENGINEERING <br />
+            Faculty Portal
+          </center>
         </div>
-
         <div className="navbar-menu">
           <button className="navbar-link">
             <User className="h-5 w-5" />
             <span>Profile</span>
           </button>
-          <button className="logout-button" onClick={() => navigate('/')}>
+          <button className="logout-button" onClick={() => navigate("/")}>
             <LogOut className="h-4 w-4" />
             <span>Logout</span>
           </button>
         </div>
       </nav>
 
-      {/* Header with faculty profile */}
+      {/* Header */}
       <header className="portal-header">
         <div className="decorative-circle top-right"></div>
         <div className="profile-section">
           <div className="profile-image-container">
-            <div className="profile-image-bg"></div>
-            <img 
-              src={'https://gvpce.ac.in/CSE/FacPhotos/umadevi.jpg'} 
-              alt="Faculty" 
-              className="profile-image"
-            />
+            <img src="https://gvpce.ac.in/CSE/FacPhotos/umadevi.jpg" alt="Faculty" className="profile-image" />
           </div>
           <div className="profile-details">
-            <div className="profile-header">
-              <h1 className="faculty-name">{faculty.name}</h1>
-              <div className="status-badge active">Active</div>
-            </div>
+            <h1 className="faculty-name">{faculty.name}</h1>
             <div className="faculty-info-grid">
-              <div className="faculty-info-item">
-                <User className="info-icon" />
-                <span className="info-label">Name:</span>
-                <span className="info-value">{faculty.name}</span>
-              </div>
-              <div className="faculty-info-item">
-                <div className="id-icon info-icon"><span>#</span></div>
-                <span className="info-label">Faculty ID:</span>
-                <span className="info-value">{faculty.id}</span>
-              </div>
-              <div className="faculty-info-item">
-                <Briefcase className="info-icon" />
-                <span className="info-label">Department:</span>
-                <span className="info-value">{faculty.dept}</span>
-              </div>
-              <div className="faculty-info-item">
-                <Calendar className="info-icon" />
-                <span className="info-label">Date of Joining:</span>
-                <span className="info-value">{faculty.doj}</span>
-              </div>
-              <div className="faculty-info-item">
-                <Award className="info-icon" />
-                <span className="info-label">Designation:</span>
-                <span className="info-value">{faculty.designation}</span>
-              </div>
+              <div className="faculty-info-item"><User className="info-icon" /><span>{faculty.name}</span></div>
+              <div className="faculty-info-item"><span className="info-label">ID:</span><span>{faculty.id}</span></div>
+              <div className="faculty-info-item"><Briefcase className="info-icon" /><span>{faculty.dept}</span></div>
+              <div className="faculty-info-item"><Calendar className="info-icon" /><span>{faculty.doj}</span></div>
+              <div className="faculty-info-item"><Award className="info-icon" /><span>{faculty.designation}</span></div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Stats Summary */}
+      {/* Stats */}
       <div className="stats-grid">
-        <div className="stat-card" style={{"--accent-color": "#3b82f6"}}>
+        <div className="stat-card" style={{ "--accent-color": "#3b82f6" }}>
           <div className="stat-label">Total Subjects</div>
           <div className="stat-value">{subjects.length}</div>
         </div>
-        <div className="stat-card" style={{"--accent-color": "#16a34a"}}>
+        <div className="stat-card" style={{ "--accent-color": "#16a34a" }}>
           <div className="stat-label">Total Students</div>
           <div className="stat-value">
             {subjects.reduce((total, subject) => total + subject.students, 0)}
           </div>
         </div>
-        <div className="stat-card" style={{"--accent-color": "#7e22ce"}}>
+        <div className="stat-card" style={{ "--accent-color": "#7e22ce" }}>
           <div className="stat-label">Assignments</div>
           <div className="stat-value">12</div>
         </div>
-        <div className="stat-card" style={{"--accent-color": "#eab308"}}>
+        <div className="stat-card" style={{ "--accent-color": "#eab308" }}>
           <div className="stat-label">Announcements</div>
           <div className="stat-value">5</div>
         </div>
@@ -133,15 +103,15 @@ function FacultyPortal() {
         <h2>My Subjects</h2>
       </div>
 
-      {/* Subject Grid */}
+      {/* Subjects */}
       <main className="subjects-grid">
         {subjects.map((subject, index) => (
-          <div 
+          <div
             key={index}
             className="subject-card"
-            style={{"--index": index}}
+            style={{ "--index": index }}
           >
-            <div className="subject-header" style={{"backgroundColor": subject.color}}>
+            <div className="subject-header" style={{ backgroundColor: subject.color }}>
               <h3>{subject.name}</h3>
               <h4 className="section">{subject.section}</h4>
             </div>
@@ -151,7 +121,9 @@ function FacultyPortal() {
                 <span className="tag students">{subject.students} Students</span>
               </div>
               <div className="action-buttons">
-                <button className="action-link">View Details</button>
+                <button className="action-link" onClick={() => handleViewDetails(subject.name)}>
+                  View Details
+                </button>
                 <button className="action-link manage">Manage</button>
               </div>
             </div>

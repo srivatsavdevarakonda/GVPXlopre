@@ -1,0 +1,240 @@
+/* TasksPage.css */
+
+/* Page Background */
+body {
+    background-color: #f0f2f5;
+    min-height: 100vh;
+  }
+  
+  /* Container Styling */
+  .tasks-container {
+    max-width: 800px;
+    padding: 0;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Card Styling */
+  .tasks-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tasks-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Card Header with Gradient */
+  .tasks-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #ff6b6b, #556270);
+    z-index: 1;
+  }
+  
+  /* Page Title Styling */
+  .tasks-title {
+    color: #2d3748;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+    display: inline-block;
+  }
+  
+  .tasks-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, transparent);
+    border-radius: 3px;
+  }
+  
+  /* Form Styling */
+  .tasks-form {
+    margin-top: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+  
+  .form-control {
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+  }
+  
+  .form-control:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    background-color: #fff;
+  }
+  
+  textarea.form-control {
+    resize: none;
+    min-height: 120px;
+  }
+  
+  /* Character Counter */
+  .char-counter {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 0.8rem;
+    color: #a0aec0;
+    pointer-events: none;
+  }
+  
+  /* Date and Number Input Styling */
+  input[type="date"].form-control, 
+  input[type="number"].form-control {
+    height: 48px;
+  }
+  
+  /* Submit Button Styling */
+  .submit-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    transition: left 0.8s ease;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(135deg, #ff5252, #ff8080);
+  }
+  
+  .submit-btn:hover::before {
+    left: 100%;
+  }
+  
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Alert Styling */
+  .tasks-alert {
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    animation: slideDown 0.5s ease-out;
+    font-weight: 500;
+  }
+  
+  .tasks-alert-success {
+    background: linear-gradient(135deg, #c3e6cb, #d4edda);
+    color: #155724;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: -100px;
+    }
+    40%, 100% {
+      background-position: 140px;
+    }
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .tasks-card {
+      padding: 1.5rem;
+    }
+    
+    .tasks-title {
+      font-size: 1.5rem;
+    }
+    
+    .form-control {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Focus Animation for Form Fields */
+  .form-group:focus-within .form-label {
+    color: #ff6b6b;
+  }
+  
+  /* Optional field animation */
+  .form-control:placeholder-shown + .form-label {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  
+  .form-control:not(:placeholder-shown) + .form-label,
+  .form-control:focus + .form-label {
+    transform: translateY(0);
+    opacity: 1;
+  }

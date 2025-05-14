@@ -1,0 +1,25 @@
+.subject-dashboard {
+  padding: 2rem;
+  text-align: center;
+}
+
+.button-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button-grid button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button-grid button:hover {
+  background-color: #2563eb;
+}
