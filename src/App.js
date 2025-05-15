@@ -62,11 +62,9 @@ import HostelOverview from './components/Hostel/HostelOverview';
 import HostelDetailsForm from './components/Hostel/HostelDetailsForm';
 import WardenTable from './components/Hostel/WardenTable';
 
-
-
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="app-container">
         <Header />
         <Navbar />
